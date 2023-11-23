@@ -1,0 +1,59 @@
+{
+    "name": "thecodebunny/magento-api",
+    "description": "A client to interact with Magento",
+    "type": "package",
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.5",
+        "laravel/framework": "^10.0",
+        "league/oauth1-client": "^1.10"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.7",
+        "nunomaduro/larastan": "^2.5",
+        "phpstan/phpstan-mockery": "^1.1",
+        "phpunit/phpunit": "^10.1",
+        "orchestra/testbench": "^8.0"
+    },
+    "authors": [
+        {
+            "name": "Hemang Vyas",
+            "email": "info@hemangvyas.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Thecodebunny\\MagentoApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Thecodebunny\\MagentoApi\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan",
+        "style": "pint --test",
+        "quality": [
+            "@test",
+            "@analyse",
+            "@style"
+        ],
+        "fix-style": "pint"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Thecodebunny\\MagentoApi\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
